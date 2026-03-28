@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+  background: #0a1628;
+  color: #e8f4f8;
+}
+
+/* Leaflet override */
+.leaflet-container {
+  background: #071628 !important;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Slider styling */
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.1);
+  outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #56c9b0;
+  cursor: pointer;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 8px #f86868); }
+  50% { opacity: 0.3; filter: none; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(3.5); opacity: 0; }
+}
+
+@keyframes dash-move {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+.tracking-route {
+  animation: dash-move 3s linear infinite;
+  filter: drop-shadow(0 0 5px currentColor);
+}
+
+.glow-icon:hover {
+  filter: drop-shadow(0 0 8px currentColor);
+  transition: 0.3s;
+}
+
+.pulse-icon {
+  animation: pulse-ring 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* Sea Label Styling */
+.sea-label {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.sea-label div {
+  color: #3d6888;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  opacity: 0.6;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sea-label-small div {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #2b4b63;
+}
